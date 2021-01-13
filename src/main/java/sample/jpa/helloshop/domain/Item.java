@@ -10,6 +10,8 @@ import java.util.List;
 @Getter
 @Setter
 @Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "DTYPE")
 public class Item {
 
     @Id @GeneratedValue
