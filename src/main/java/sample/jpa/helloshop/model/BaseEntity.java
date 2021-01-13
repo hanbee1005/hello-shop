@@ -1,4 +1,4 @@
-package sample.jpa.helloshop.domain;
+package sample.jpa.helloshop.model;
 
 import lombok.Getter;
 import lombok.Setter;

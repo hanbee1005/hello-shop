@@ -1,4 +1,4 @@
-package sample.jpa.helloshop.domain;
+package sample.jpa.helloshop.model;
 
 public enum DeliveryStatus {
     READY,  // 준비

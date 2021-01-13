@@ -1,4 +1,4 @@
-package sample.jpa.helloshop.domain;
+package sample.jpa.helloshop.model;
 
 public enum OrderStatus {
     ORDER, CANCEL

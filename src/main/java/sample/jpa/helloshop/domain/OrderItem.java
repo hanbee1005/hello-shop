@@ -2,6 +2,7 @@ package sample.jpa.helloshop.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import sample.jpa.helloshop.model.BaseEntity;
 
 import javax.persistence.*;
 
