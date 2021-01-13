@@ -2,6 +2,7 @@ package sample.jpa.helloshop.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import sample.jpa.helloshop.model.Address;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -18,9 +19,8 @@ public class Member extends BaseEntity {
 
     private String name;
 
-    private String city;
-    private String street;
-    private String zipCode;
+    @Embedded
+    private Address address;
 
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<Order>();

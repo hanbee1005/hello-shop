@@ -2,6 +2,7 @@ package sample.jpa.helloshop.domain;
 
 import lombok.Getter;
 import lombok.Setter;
+import sample.jpa.helloshop.model.Address;
 
 import javax.persistence.*;
 
@@ -17,9 +18,8 @@ public class Delivery extends BaseEntity {
     @OneToOne(mappedBy = "delivery")
     private Order order;
 
-    private String city;
-    private String street;
-    private String zipcode;
+    @Embedded
+    private Address address;
 
     @Enumerated(EnumType.STRING)
     private DeliveryStatus status;
