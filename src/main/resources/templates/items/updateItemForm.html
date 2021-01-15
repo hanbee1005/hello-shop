@@ -17,6 +17,7 @@
                 <br><br>
                 <label for="name">수량 </label>
                 <input type="text" id="stockQuantity" name="stockQuantity" placeholder="수량을 입력하세요." th:value="${item.stockQuantity}"> <!--name 이 서버로 넘어가는 키-->
+                <input type="hidden" name="id" th:value="${item.id}">
             </div>
             <br><br>
             <button type="submit">수정</button>
