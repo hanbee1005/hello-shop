@@ -3,6 +3,7 @@ package sample.jpa.helloshop.service;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
 import sample.jpa.helloshop.Repository.MemberRepository;
 import sample.jpa.helloshop.domain.Member;
@@ -19,10 +20,11 @@ class MemberServiceTest {
     @Autowired MemberRepository memberRepository;
 
     @Test
+    @Commit
     void 회원가입() throws Exception {
         // Given
         Member member = new Member();
-        member.setName("kim");
+        member.setName("son");
 
         // When
         Long saveId = memberService.join(member);

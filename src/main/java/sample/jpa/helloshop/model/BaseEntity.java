@@ -10,6 +10,6 @@ import java.util.Date;
 @Setter
 @MappedSuperclass
 public class BaseEntity {
-    private Date createdDate;       // 등록일
+    private Date createdDate = new Date();  // 등록일
     private Date lastModifiedDate;  // 수정일
 }

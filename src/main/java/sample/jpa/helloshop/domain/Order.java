@@ -67,7 +67,7 @@ public class Order extends BaseEntity {
             order.addOrderItem(orderItem);
         }
         order.setStatus(OrderStatus.ORDER);
-        order.setCreatedDate(new Date());
+        order.setOrderDate(new Date());
         return order;
     }
 
