@@ -6,10 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 import sample.jpa.helloshop.Repository.ItemRepository;
 import sample.jpa.helloshop.Repository.MemberRepository;
 import sample.jpa.helloshop.Repository.OrderRepository;
-import sample.jpa.helloshop.domain.Delivery;
-import sample.jpa.helloshop.domain.Member;
-import sample.jpa.helloshop.domain.Order;
-import sample.jpa.helloshop.domain.OrderItem;
+import sample.jpa.helloshop.domain.*;
 import sample.jpa.helloshop.domain.item.Item;
 
 import java.util.List;
@@ -69,7 +66,7 @@ public class OrderService {
      * @param orderSearch
      * @return
      */
-//    public List<Order> findOrders(OrderSearch orderSearch) {
-//        return orderRepository.findAll(orderSearch);
-//    }
+    public List<Order> findOrders(OrderSearch orderSearch) {
+        return orderRepository.findAll(orderSearch);
+    }
 }
