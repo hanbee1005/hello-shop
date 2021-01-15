@@ -1,8 +1,8 @@
-package sample.jpa.helloshop.model;
+package sample.jpa.helloshop.domain.item;
 
 import lombok.Getter;
 import lombok.Setter;
-import sample.jpa.helloshop.domain.Item;
+import sample.jpa.helloshop.domain.item.Item;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
