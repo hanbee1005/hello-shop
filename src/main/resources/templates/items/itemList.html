@@ -25,7 +25,7 @@
                     <td th:text="${item.price}"></td>
                     <td th:text="${item.stockQuantity}"></td>
                     <td>
-                        <button th:href="@{/items/${item.id}/edit}">수정</button>
+                        <button th:onclick="'location.href=\'/items/' + ${item.id} + '/edit\''">수정</button>
                     </td>
                 </tr>
             </tbody>
