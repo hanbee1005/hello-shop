@@ -14,4 +14,12 @@ public class Address {
     private String street;
     private String zopcode;
 
+    public Address() {
+    }
+
+    public Address(String city, String street, String zopcode) {
+        this.city = city;
+        this.street = street;
+        this.zopcode = zopcode;
+    }
 }
