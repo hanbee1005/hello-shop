@@ -3,6 +3,7 @@ package sample.jpa.helloshop.domain.item;
 import lombok.Getter;
 import lombok.Setter;
 import sample.jpa.helloshop.domain.Category;
+import sample.jpa.helloshop.exception.NotEnoughStockException;
 import sample.jpa.helloshop.model.BaseEntity;
 
 import javax.persistence.*;
@@ -26,4 +27,17 @@ public class Item extends BaseEntity {
 
     @ManyToMany(mappedBy = "items")
     private List<Category> categories = new ArrayList<>();
+
+    //== 비즈니스 로직 ==//
+    public void addStock(int quantity) {
+        this.stockQuantity += quantity;
+    }
+
+    public void removeStock(int quantity) {
+        int restStock = this.stockQuantity - quantity;
+        if (restStock < 0) {
+            throw new NotEnoughStockException("need more stock");
+        }
+        this.stockQuantity =restStock;
+    }
 }
