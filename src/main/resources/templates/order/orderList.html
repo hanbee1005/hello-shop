@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<div class="container">
+    <div>
+        <h3 onclick="location.href='/'">Hello Shop</h3>
+        <hr>
+    </div>
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>회원명</th>
+                <th>대표 상품 이름</th>
+                <th>주문 가격</th>
+                <th>주문 수량</th>
+                <th>상태</th>
+                <th>일시</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="order : ${orders}">
+                <td th:text="${order.id}"></td>
+                <td th:text="${order.getMember().name}"></td>
+                <td th:text="${order.getOrderItems().get(0).getItem().name}"></td>
+                <td th:text="${order.gerTotalPrice()}"></td>
+                <td th:text="${order.getOrderItems().get(0).count}"></td>
+                <td th:text="${order.getStatus()}"></td>
+                <td th:text="${order.getOrderDate()}"></td>
+                <td>
+                    <button th:if="${order.getStatus().toString().equals('ORDER')}" th:onclick="'location.href=\'/order/' + ${order.id} + '/cancel\''">주문 취소</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div> <!-- /container -->
+
+</body>
+</html>
